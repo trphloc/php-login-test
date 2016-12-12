@@ -5,7 +5,7 @@ $token = $obj["tokenValue"];
 
 if(strcmp($token, "tokentpl") == 0 or
    strcmp($token, "tokentpl1") == 0 or
-   strcmp($token, "tokentpl2") == 0 or){
+   strcmp($token, "tokentpl2") == 0){
 	$unixtime = time();
 	$out = '{';	
 	$out = $out . '"status":true,';
