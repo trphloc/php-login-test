@@ -3,12 +3,13 @@ $json = file_get_contents('php://input');
 $obj = json_decode($json, true);
 $user = $obj["username"];
 
-if(strcmp($user, "tpl") == 0){
+if(strpos($a, 'tpl') !== false){
 	$unixtime = time();
+        $token = "token" . $user;
 	$out = '{';	
 	$out = $out . '"status":true,';
 	$out = $out . '"data":{"id":1,"username":"' . $user . '",';
-	$out = $out . '"token":"' . 'tokentpl' . '",';
+	$out = $out . '"token":"' . $token . '",';
 	$out = $out . '"loginDate":' . $unixtime . ',';
 	$out = $out . '"expiredDate":' . ($unixtime + (7*24*60*60)) . ',';        
 	$out = $out . '"isExpired":true},';
