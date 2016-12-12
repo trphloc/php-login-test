@@ -3,7 +3,7 @@ $json = file_get_contents('php://input');
 $obj = json_decode($json, true);
 $user = $obj["username"];
 
-if(strpos($a, 'tpl') !== false){
+if(strpos($user, 'tpl') !== false){
 	$unixtime = time();
         $token = "token" . $user;
 	$out = '{';	
@@ -20,7 +20,8 @@ if(strpos($a, 'tpl') !== false){
 	$out = '{';
 	$out = $out . '"status":false,';
 	$out = $out . '"data":"",';
-	$out = $out . '"message":"login fail"';        
+	$out = $out . '"message":"login fail"';
+	$out = $out . '}';        
 	echo $out;
 }
 ?>
